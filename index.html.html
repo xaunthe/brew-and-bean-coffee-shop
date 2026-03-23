@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brew &amp; Bean Coffee Shop</title>
+    <style>
+
+        /* ===== BODY ===== */
+        body {
+            background-color: #FDFAF5;
+            color: #2D2A26;
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ===== NAVIGATION BAR ===== */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #2D2A26;
+        }
+
+        ul.navbar li {
+            float: left;
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: #E8E0D0;
+            text-align: center;
+            padding: 18px 28px;
+            text-decoration: none;
+            font-family: Georgia, serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #7A6652;
+            color: #FDFAF5;
+        }
+
+        ul.navbar li a.active {
+            background-color: #C17A5A;
+            color: #FDFAF5;
+        }
+
+        /* ===== HERO (logo section) ===== */
+        #hero {
+            background-color: #EDE3D4;
+            text-align: center;
+            padding: 70px 20px 60px 20px;
+            border-bottom: 3px solid #C17A5A;
+        }
+
+        #hero img.logo {
+            width: 200px;
+        }
+
+        #hero p.tagline {
+            color: #7A6652;
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin: 6px 0 16px 0;
+        }
+
+        #hero p.subtitle {
+            color: #7A6652;
+            font-size: 15px;
+            margin: 0;
+            line-height: 1.8;
+            letter-spacing: 1px;
+        }
+
+        /* ===== BANNER (dark overlay section below navbar) ===== */
+        #banner {
+            position: relative;
+            text-align: center;
+            border-bottom: 3px solid #C17A5A;
+            overflow: hidden;
+        }
+
+        #banner-img {
+            width: 100%;
+            height: 280px;
+            display: block;
+            background-color: #3D2B1F;
+            border: none;
+        }
+
+        #banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 20, 16, 0.72);
+            text-align: center;
+            box-sizing: border-box;
+            padding: 80px 20px;
+        }
+
+        #banner h1 {
+            color: #F0E8DA;
+            font-family: Georgia, serif;
+            font-size: 36px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin: 0 0 12px 0;
+        }
+
+        #banner p {
+            color: #D4C4AE;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        /* ===== SHARED SECTION STYLES ===== */
+        .section {
+            padding: 55px 70px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #C17A5A;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid #C17A5A;
+            width: 60px;
+            margin: 0 auto 45px auto;
+        }
+
+        /* ===== ABOUT ===== */
+        #about {
+            background-color: #F5EFE3;
+            border-bottom: 1px solid #DDD0BC;
+        }
+
+        #about p {
+            text-align: center;
+            max-width: 660px;
+            margin: 0 auto;
+            line-height: 2;
+            font-size: 15px;
+            color: #4A3F33;
+        }
+
+        /* ===== MENU ===== */
+        #menu {
+            background-color: #FDFAF5;
+        }
+
+        .menu-category {
+            margin-bottom: 55px;
+        }
+
+        .category-title {
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #7A6652;
+            border-bottom: 1px solid #DDD0BC;
+            padding-bottom: 10px;
+            margin-bottom: 28px;
+            font-family: Georgia, serif;
+        }
+
+        /* ===== MENU CARD ===== */
+        .menu-card {
+            background-color: #F5EFE3;
+            border: 1px solid #DDD0BC;
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+
+        .menu-card:hover {
+            border-color: #C17A5A;
+        }
+
+        /* Image placeholder - left side */
+        .item-img-box {
+            float: left;
+            width: 110px;
+            height: 110px;
+            background-color: #E8DFD0;
+            border-right: 1px solid #DDD0BC;
+            text-align: center;
+        }
+
+        .item-img-box img {
+            width: 110px;
+            height: 110px;
+            display: block;
+        }
+
+        /* Placeholder label inside the box */
+        .ph-label {
+            margin-top: 28px;
+            display: block;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9C8878;
+            font-family: Georgia, serif;
+        }
+
+        .ph-line {
+            display: block;
+            width: 40px;
+            border-top: 1px solid #C17A5A;
+            margin: 8px auto 0 auto;
+        }
+
+        /* Text content - right side */
+        .item-content {
+            overflow: hidden;
+            padding: 20px 22px;
+        }
+
+        .item-top {
+            overflow: hidden;
+        }
+
+        .item-name {
+            float: left;
+            font-size: 15px;
+            font-weight: bold;
+            color: #2D2A26;
+            margin: 0 0 6px 0;
+            font-family: Georgia, serif;
+        }
+
+        .item-price {
+            float: right;
+            font-size: 15px;
+            font-weight: bold;
+            color: #C17A5A;
+            margin: 0;
+            font-family: Georgia, serif;
+        }
+
+        .item-desc {
+            font-size: 13px;
+            color: #6B5C4E;
+            margin: 6px 0 0 0;
+            line-height: 1.7;
+            clear: both;
+        }
+
+        /* ===== ORDER FORM ROW (select + qty side by side) ===== */
+        .form-row {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .form-row .form-col-select {
+            float: left;
+            width: 74%;
+        }
+
+        .form-row .form-col-qty {
+            float: right;
+            width: 22%;
+        }
+
+        .form-row label {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #4A3F33;
+            margin-bottom: 7px;
+            font-family: Georgia, serif;
+        }
+
+        .form-row select,
+        .form-row input[type="number"] {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #C17A5A;
+            background-color: #FDFAF5;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            color: #2D2A26;
+            box-sizing: border-box;
+        }
+
+        .form-row select:focus,
+        .form-row input[type="number"]:focus {
+            border-color: #7A6652;
+            outline: none;
+        }
+
+        /* ===== ORDER FORM ===== */
+        #order {
+            background-color: #F5EFE3;
+            border-top: 1px solid #DDD0BC;
+        }
+
+        .order-form-wrapper {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #4A3F33;
+            margin-bottom: 7px;
+            font-family: Georgia, serif;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #C17A5A;
+            background-color: #FDFAF5;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            color: #2D2A26;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            height: 90px;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #7A6652;
+            outline: none;
+        }
+
+        .btn-order {
+            background-color: #C17A5A;
+            color: #FDFAF5;
+            border: none;
+            padding: 15px 50px;
+            font-family: Georgia, serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn-order:hover {
+            background-color: #7A6652;
+        }
+
+        /* ===== FOOTER ===== */
+        #footer {
+            background-color: #2D2A26;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        #footer p {
+            color: #E8E0D0;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 5px 0;
+            font-family: Georgia, serif;
+        }
+
+        /* ===== ORDER TOTAL BOX ===== */
+        #order-total-box {
+            background-color: #2D2A26;
+            padding: 18px 24px;
+            margin-bottom: 22px;
+        }
+
+        #order-total-inner {
+            overflow: hidden;
+        }
+
+        #total-label {
+            float: left;
+            color: #E8E0D0;
+            font-family: Georgia, serif;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        #total-amount {
+            float: right;
+            color: #E8E0D0;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ===== NAVBAR LOGO PLACEHOLDER ===== */
+        ul.navbar {
+            position: relative;
+        }
+
+        .navbar-logo {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 8px 16px;
+        }
+
+        .navbar-logo-box {
+            width: 42px;
+            height: 42px;
+            background-color: #3D3830;
+            border: 1px solid #7A6652;
+            text-align: center;
+            display: table;
+        }
+
+        .navbar-logo-box-inner {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .navbar-logo-box-inner img {
+            width: 42px;
+            height: 42px;
+            display: block;
+        }
+
+        .navbar-logo-box span {
+            font-size: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #9C8878;
+            font-family: Georgia, serif;
+        }
+
+        /* ===== ORDER POPUP ===== */
+        #order-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #order-popup-box {
+            background-color: #FDFAF5;
+            border-top: 4px solid #C17A5A;
+            width: 380px;
+            margin: 180px auto 0 auto;
+            padding: 40px 36px;
+            text-align: center;
+        }
+
+        #order-popup-box h3 {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C17A5A;
+            margin: 0 0 12px 0;
+        }
+
+        #order-popup-box p {
+            font-family: Georgia, serif;
+            font-size: 14px;
+            color: #4A3F33;
+            line-height: 1.8;
+            margin: 0 0 24px 0;
+        }
+
+        #popup-close {
+            background-color: #C17A5A;
+            color: #FDFAF5;
+            border: none;
+            padding: 12px 36px;
+            font-family: Georgia, serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        #popup-close:hover {
+            background-color: #7A6652;
+        }
+
+        /* ===== UTILITY ===== */
+        .clearfix {
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <ul class="navbar">
+        <li><a class="active" href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order</a></li>
+        <li class="navbar-logo">
+            <div class="navbar-logo-box">
+                <div class="navbar-logo-box-inner">
+                    <img src="navbarlogo.png" alt="Brew and Bean" />
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+    <!-- DARK BANNER SECTION -->
+    <div id="banner">
+        <img id="banner-img" src="banner.png" alt="Cafe Background" />
+        <div id="banner-overlay">
+            <h1>Brew &amp; Bean Coffee Shop</h1>
+            <p>Where students recharge.</p>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div id="about" class="section">
+        <h2 class="section-title">About Us</h2>
+        <hr class="section-divider">
+        <p>
+            Welcome to our cafe! We aim to serve affordable and delicious pastries and drinks perfect for
+            students who need a quick break or study companion. Whether you're catching up with friends
+            or working on school tasks, our space and menu are designed to keep you energized and happy.
+        </p>
+    </div>
+
+    <!-- MENU SECTION -->
+    <div id="menu" class="section">
+        <h2 class="section-title">Our Menu</h2>
+        <hr class="section-divider">
+
+        <!-- PASTRIES -->
+        <div class="menu-category">
+            <h3 class="category-title">Pastries</h3>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="buttercro.png" alt="Butter Croissant" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Butter Croissant</p>
+                        <p class="item-price">&#8369;65</p>
+                    </div>
+                    <p class="item-desc">A light, flaky pastry with a rich buttery taste. Perfect for a quick snack.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="chococro.png" alt="Chocolate Croissant" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Chocolate Croissant</p>
+                        <p class="item-price">&#8369;75</p>
+                    </div>
+                    <p class="item-desc">A crispy croissant filled with smooth, melted chocolate inside.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="bluemuff.png" alt="Blueberry Muffin" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Blueberry Muffin</p>
+                        <p class="item-price">&#8369;70</p>
+                    </div>
+                    <p class="item-desc">Soft and moist muffin loaded with sweet and tangy blueberries.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="bananabread.png" alt="Banana Bread Slice" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Banana Bread Slice</p>
+                        <p class="item-price">&#8369;60</p>
+                    </div>
+                    <p class="item-desc">Homemade-style banana bread that's soft, sweet, and comforting.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="cheeseensay.png" alt="Cheese Ensaymada" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Cheese Ensaymada</p>
+                        <p class="item-price">&#8369;55</p>
+                    </div>
+                    <p class="item-desc">A soft, fluffy bread topped with butter, sugar, and grated cheese.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="strawdan.png" alt="Strawberry Danish" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Strawberry Danish</p>
+                        <p class="item-price">&#8369;80</p>
+                    </div>
+                    <p class="item-desc">A flaky pastry topped with sweet strawberry filling and a light glaze.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="chocochip.png" alt="Chocolate Chip Cookie" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Chocolate Chip Cookie</p>
+                        <p class="item-price">&#8369;50</p>
+                    </div>
+                    <p class="item-desc">Chewy and soft cookie packed with rich chocolate chips.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="cinnaroll.png" alt="Cinnamon Roll" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Cinnamon Roll</p>
+                        <p class="item-price">&#8369;85</p>
+                    </div>
+                    <p class="item-desc">Soft roll with cinnamon sugar filling and creamy icing on top.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="ubechi.png" alt="Ube Cheese Pandesal" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Ube Cheese Pandesal</p>
+                        <p class="item-price">&#8369;65</p>
+                    </div>
+                    <p class="item-desc">A Filipino favorite with ube flavor and cheesy filling inside.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="hamncheese.png" alt="Ham and Cheese Puff" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Ham and Cheese Puff</p>
+                        <p class="item-price">&#8369;90</p>
+                    </div>
+                    <p class="item-desc">A savory puff pastry filled with ham and melted cheese.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- END PASTRIES -->
+
+        <!-- HOT DRINKS -->
+        <div class="menu-category">
+            <h3 class="category-title">Hot Drinks</h3>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="latte.png" alt="Cafe Latte" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Cafe Latte</p>
+                        <p class="item-price">&#8369;85</p>
+                    </div>
+                    <p class="item-desc">A smooth mix of espresso and steamed milk, perfect for relaxing or studying.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="cappu.png" alt="Cappuccino" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Cappuccino</p>
+                        <p class="item-price">&#8369;90</p>
+                    </div>
+                    <p class="item-desc">Rich espresso topped with creamy foam for a bold yet balanced taste.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="hotchoco.png" alt="Hot Chocolate" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Hot Chocolate</p>
+                        <p class="item-price">&#8369;75</p>
+                    </div>
+                    <p class="item-desc">Warm, sweet, and comforting — perfect for cozy moments.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="americano.png" alt="Americano" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Americano</p>
+                        <p class="item-price">&#8369;70</p>
+                    </div>
+                    <p class="item-desc">A simple black coffee with a strong and bold flavor.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="caralatte.png" alt="Caramel Latte" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Caramel Latte</p>
+                        <p class="item-price">&#8369;95</p>
+                    </div>
+                    <p class="item-desc">A sweet and creamy coffee with a hint of caramel flavor.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- END HOT DRINKS -->
+
+        <!-- COLD DRINKS -->
+        <div class="menu-category">
+            <h3 class="category-title">Cold Drinks</h3>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="icedmat.png" alt="Iced Matcha Latte" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Iced Matcha Latte</p>
+                        <p class="item-price">&#8369;95</p>
+                    </div>
+                    <p class="item-desc">Refreshing green tea mixed with milk, slightly sweet and earthy.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="icedcara.png" alt="Iced Caramel Macchiato" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Iced Caramel Macchiato</p>
+                        <p class="item-price">&#8369;100</p>
+                    </div>
+                    <p class="item-desc">Chilled espresso drink with milk and caramel drizzle for a sweet kick.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="icedcof.png" alt="Iced Coffee" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Iced Coffee</p>
+                        <p class="item-price">&#8369;80</p>
+                    </div>
+                    <p class="item-desc">Classic cold coffee that's smooth and refreshing.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="strawmilk.png" alt="Strawberry Milk" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Strawberry Milk</p>
+                        <p class="item-price">&#8369;85</p>
+                    </div>
+                    <p class="item-desc">Sweet and creamy milk drink with a fruity strawberry flavor.</p>
+                </div>
+            </div>
+
+            <div class="menu-card clearfix">
+                <div class="item-img-box">
+                    <img src="chocofrap.png" alt="Chocolate Frappe" />
+                </div>
+                <div class="item-content">
+                    <div class="item-top clearfix">
+                        <p class="item-name">Chocolate Frappe</p>
+                        <p class="item-price">&#8369;110</p>
+                    </div>
+                    <p class="item-desc">Blended iced chocolate drink topped with whipped cream for extra indulgence.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- END COLD DRINKS -->
+
+    </div>
+    <!-- END MENU -->
+
+    <!-- ORDER FORM SECTION -->
+    <div id="order" class="section">
+        <h2 class="section-title">Place Your Order</h2>
+        <hr class="section-divider">
+
+        <div class="order-form-wrapper">
+            <form>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" />
+                </div>
+
+                <!-- PASTRY ROW -->
+                <div class="form-row">
+                    <div class="form-col-select">
+                        <label for="pastry">Pastry</label>
+                        <select id="pastry" name="pastry">
+                            <option value="none">None</option>
+                            <option value="butter-croissant">Butter Croissant - &#8369;65</option>
+                            <option value="choco-croissant">Chocolate Croissant - &#8369;75</option>
+                            <option value="blueberry-muffin">Blueberry Muffin - &#8369;70</option>
+                            <option value="banana-bread">Banana Bread Slice - &#8369;60</option>
+                            <option value="ensaymada">Cheese Ensaymada - &#8369;55</option>
+                            <option value="strawberry-danish">Strawberry Danish - &#8369;80</option>
+                            <option value="cookie">Chocolate Chip Cookie - &#8369;50</option>
+                            <option value="cinnamon-roll">Cinnamon Roll - &#8369;85</option>
+                            <option value="ube-pandesal">Ube Cheese Pandesal - &#8369;65</option>
+                            <option value="ham-puff">Ham and Cheese Puff - &#8369;90</option>
+                        </select>
+                    </div>
+                    <div class="form-col-qty">
+                        <label for="pastry-qty">Qty</label>
+                        <input type="number" id="pastry-qty" name="pastry-qty" value="1" min="1" max="20" />
+                    </div>
+                </div>
+
+                <!-- HOT DRINK ROW -->
+                <div class="form-row">
+                    <div class="form-col-select">
+                        <label for="hot-drink">Hot Drink</label>
+                        <select id="hot-drink" name="hot-drink">
+                            <option value="none">None</option>
+                            <option value="cafe-latte">Cafe Latte - &#8369;85</option>
+                            <option value="cappuccino">Cappuccino - &#8369;90</option>
+                            <option value="hot-choco">Hot Chocolate - &#8369;75</option>
+                            <option value="americano">Americano - &#8369;70</option>
+                            <option value="caramel-latte">Caramel Latte - &#8369;95</option>
+                        </select>
+                    </div>
+                    <div class="form-col-qty">
+                        <label for="hot-qty">Qty</label>
+                        <input type="number" id="hot-qty" name="hot-qty" value="1" min="1" max="20" />
+                    </div>
+                </div>
+
+                <!-- COLD DRINK ROW -->
+                <div class="form-row">
+                    <div class="form-col-select">
+                        <label for="cold-drink">Cold Drink</label>
+                        <select id="cold-drink" name="cold-drink">
+                            <option value="none">None</option>
+                            <option value="matcha">Iced Matcha Latte - &#8369;95</option>
+                            <option value="caramel-mac">Iced Caramel Macchiato - &#8369;100</option>
+                            <option value="iced-coffee">Iced Coffee - &#8369;80</option>
+                            <option value="strawberry-milk">Strawberry Milk - &#8369;85</option>
+                            <option value="frappe">Chocolate Frappe - &#8369;110</option>
+                        </select>
+                    </div>
+                    <div class="form-col-qty">
+                        <label for="cold-qty">Qty</label>
+                        <input type="number" id="cold-qty" name="cold-qty" value="1" min="1" max="20" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Special Notes (optional)</label>
+                    <textarea id="notes" name="notes" placeholder="e.g. less sugar, extra hot, etc."></textarea>
+                </div>
+
+                <!-- ORDER TOTAL -->
+                <div id="order-total-box">
+                    <div id="order-total-inner">
+                        <span id="total-label">Order Total</span>
+                        <span id="total-amount">&#8369;0</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="button" class="btn-order" value="Place Order" onclick="document.getElementById('order-popup').style.display='block'" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- ORDER CONFIRMATION POPUP -->
+    <div id="order-popup">
+        <div id="order-popup-box">
+            <h3>Order Placed!</h3>
+            <p>Thank you for your order. We will prepare it shortly. Please wait and enjoy your visit!</p>
+            <input type="button" id="popup-close" value="Close" onclick="document.getElementById('order-popup').style.display='none'" />
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <p>Brew &amp; Bean Coffee Shop</p>
+        <p>Sip, study, repeat.</p>
+    </div>
+
+    <script>
+        // Prices for each item
+        var pastryPrices = {
+            "none": 0,
+            "butter-croissant": 65,
+            "choco-croissant": 75,
+            "blueberry-muffin": 70,
+            "banana-bread": 60,
+            "ensaymada": 55,
+            "strawberry-danish": 80,
+            "cookie": 50,
+            "cinnamon-roll": 85,
+            "ube-pandesal": 65,
+            "ham-puff": 90
+        };
+
+        var hotPrices = {
+            "none": 0,
+            "cafe-latte": 85,
+            "cappuccino": 90,
+            "hot-choco": 75,
+            "americano": 70,
+            "caramel-latte": 95
+        };
+
+        var coldPrices = {
+            "none": 0,
+            "matcha": 95,
+            "caramel-mac": 100,
+            "iced-coffee": 80,
+            "strawberry-milk": 85,
+            "frappe": 110
+        };
+
+        function computeTotal() {
+            var pastryVal = document.getElementById("pastry").value;
+            var pastryQty = parseInt(document.getElementById("pastry-qty").value);
+            var hotVal = document.getElementById("hot-drink").value;
+            var hotQty = parseInt(document.getElementById("hot-qty").value);
+            var coldVal = document.getElementById("cold-drink").value;
+            var coldQty = parseInt(document.getElementById("cold-qty").value);
+
+            var pastryTotal = pastryPrices[pastryVal] * pastryQty;
+            var hotTotal = hotPrices[hotVal] * hotQty;
+            var coldTotal = coldPrices[coldVal] * coldQty;
+
+            var total = pastryTotal + hotTotal + coldTotal;
+
+            document.getElementById("total-amount").innerHTML = "&#8369;" + total;
+        }
+
+        // Attach computeTotal to all dropdowns and quantity fields
+        document.getElementById("pastry").onchange = computeTotal;
+        document.getElementById("pastry-qty").onchange = computeTotal;
+        document.getElementById("hot-drink").onchange = computeTotal;
+        document.getElementById("hot-qty").onchange = computeTotal;
+        document.getElementById("cold-drink").onchange = computeTotal;
+        document.getElementById("cold-qty").onchange = computeTotal;
+    </script>
+
+</body>
+</html>
